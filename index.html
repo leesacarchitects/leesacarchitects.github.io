@@ -6,7 +6,7 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WMNQL57G');</script>
-
+    
     <meta charset="UTF-8">
     <script>
         (function() {
@@ -27,69 +27,58 @@
     <meta property="og:title" content="이삭건축사사무소">
     <meta property="og:description" content="고요함 가운데 견고한 건축을 만듭니다">
     <meta property="og:image" content="og_image.png"> 
-    <meta property="og:url" content="https://www.leesacarchitects.com">
+    <meta property="og:url" content="https://www.leesac.co.kr">
     <title>이삭건축사사무소</title>
     
     <style>
         /* [공통] */
         html, body { margin: 0; padding: 0; background-color: #ffffff; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; }
+        
+        /* 링크 스타일 초기화 */
+        a { text-decoration: none !important; color: inherit !important; font-weight: 500 !important; }
 
-        /* [PC 및 태블릿 통합 기반] */
+        /* [PC 버전 스타일] */
         @media (min-width: 481px) {
             :root {
                 --base-font-size: 12px;
-                --base-line-height: 1.8;
+                --base-line-height: 2.2; 
                 --main-color: #444444;
                 --sub-text-color: #888888;
-                --section-gap: 12px;
-                --content-width: 1400px;
-                --side-padding: 265px; 
             }
             html, body { width: 100%; height: 100%; overflow: hidden; color: var(--main-color); font-size: var(--base-font-size); line-height: var(--base-line-height); }
-            @media (max-width: 1450px), (max-height: 850px) { html, body { overflow: auto; } }
             
-            .mobile-only { display: none !important; }
-            header.pc-only { display: none; }
+            .main-wrapper.pc-only { display: flex; width: 100%; height: 100vh; padding-left: 60px; padding-top: 50px; box-sizing: border-box; }
+            .column-left { width: 220px; flex-shrink: 0; }
+            .pc-title-logo { height: 34px; margin-bottom: 100px; cursor: pointer; display: block; }
             
-            .main-wrapper { width: 100%; display: flex; justify-content: center; padding-top: 80px; box-sizing: border-box; }
+            .nav-menu { list-style: none; padding: 0; margin: 0; }
+            .nav-item { font-size: 12.5px; font-weight: 500; color: #000000; margin-bottom: 25px; cursor: pointer; letter-spacing: 0.02em; transition: opacity 0.3s; }
+            .nav-item:hover { opacity: 0.5; }
 
-            /* [PC 버전 전용: 1025px 이상] - 원래의 왼쪽 여백(265px) 배치 복구 */
-            @media (min-width: 1025px) {
-                .grid-container { display: flex; width: var(--content-width); padding-left: var(--side-padding); padding-bottom: 50px; box-sizing: border-box; }
-            }
-            
-            /* [태블릿 버전 전용: 481px ~ 1024px] - 좌우 균등 중앙 정렬 */
-            @media (max-width: 1024px) {
-                .grid-container { 
-                    display: flex;
-                    width: fit-content; 
-                    padding-left: 0; 
-                    padding-right: 0;
-                    margin: 0 auto; 
-                    padding-bottom: 50px;
-                    box-sizing: border-box;
-                }
-            }
+            .column-right { flex-grow: 1; padding-left: 350px; padding-top: 134px; height: 100vh; overflow-y: auto; padding-bottom: 120px; box-sizing: border-box; }
+            .content-section { display: none; animation: fadeIn 0.3s forwards; }
+            .content-section.active { display: block; }
 
-            .pc-title-logo { height: 34px; margin-bottom: 60px; display: block; }
-            .column-left { width: 220px; flex-shrink: 0; margin-right: 50px; }
-            .column-mid { width: 300px; flex-shrink: 0; margin-right: 30px; }
-            .column-right { width: 340px; flex-shrink: 0; }
+            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+            .item, p { margin: 0; font-weight: 500; display: block; line-height: var(--base-line-height); }
             
-            .item, p, span { display: block; margin: 0; font-weight: 500; }
-            .section-title { font-size: 13px; font-weight: 800; margin-bottom: var(--section-gap); text-transform: uppercase; }
-            .section-h2 { font-size: 12px; font-weight: 700; margin: 35px 0 8px 0; }
-            .main-logo { width: 178px; margin-top: 30px; cursor: pointer; animation: pulse 6s infinite ease-in-out; }
+            .pc-gallery { width: 220px; height: 280px; position: relative; overflow: hidden; }
+            .pc-gallery img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 2s ease-in-out; filter: grayscale(100%); }
+            .pc-gallery img.active { opacity: 1; }
+
+            .main-logo { width: 183px; margin-top: 35px; margin-left: -8px; cursor: pointer; animation: pulse 6s infinite ease-in-out; }
             @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
-            
-            .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); align-items: center; justify-content: flex-end; }
-            .modal-content { background-color: #fff; width: 360px; max-height: 75vh; margin-right: 80px; position: relative; border-radius: 4px; box-shadow: -10px 0 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
-            .modal-header { padding: 20px 30px 10px 30px; background: #fff; border-bottom: 1px solid #f7f7f7; position: sticky; top: 0; }
-            .modal-body { padding: 10px 30px 30px 30px; overflow-y: auto; }
-            .close-modal { position: absolute; right: 20px; top: 15px; font-size: 20px; cursor: pointer; color: #aaa; }
+
+            .project-toggle { cursor: pointer; font-weight: 700; font-size: 11px; margin-top: 15px; text-decoration: underline; }
+            .project-content { display: none; margin-top: 15px; }
+            .sub-detail { font-size: 10px; color: var(--sub-text-color); display: block; margin-top: -5px; margin-bottom: 5px; }
+            .year-text { font-size: 10.5px; color: var(--sub-text-color); margin-left: 4px; font-weight: 400; }
+            .disclaimer { font-size: 9.5px; color: #444444; opacity: 0.6; margin-top: 35px; line-height: 1.8; font-weight: 500; }
+            .section-h2 { font-size: 12px; font-weight: 700; margin: 35px 0 8px 0; }
         }
 
-        /* [모바일 버전 스타일 - 절대 수정 금지] */
+        /* [모바일 버전 스타일] */
         @media (max-width: 480px) {
             :root {
                 --base-font-size: 12px;
@@ -102,146 +91,97 @@
             }
             .pc-only { display: none !important; }
             html, body { color: var(--main-color); font-size: var(--base-font-size); line-height: var(--base-line-height); overflow-x: hidden; }
+            
             header { position: fixed; top: 0; left: 0; width: 100%; height: 120px; background: #ffffff; z-index: 1000; display: flex; justify-content: center; align-items: center; }
             .header-logo { height: 35px; width: auto; cursor: pointer; }
+            
             .main-wrapper { display: flex; justify-content: center; padding-top: 190px; padding-bottom: 100px; width: 100%; }
             .content-box { width: var(--container-width); display: flex; flex-direction: column; }
+            
             .text-group { padding-left: var(--text-indent); box-sizing: border-box; }
             .section-title { font-size: 13px; font-weight: 800; letter-spacing: 0.03em; margin-bottom: var(--section-gap); display: block; text-transform: uppercase; }
-            .item, p, li, span { font-weight: 500; display: block; margin: 0; padding: 0; }
+            
+            .item, p, li, span { font-weight: 500; display: flex; align-items: baseline; margin: 0; padding: 0; }
             .para-top { margin-top: var(--section-gap); }
-            .main-logo { width: 80%; height: auto; margin-top: 40px; margin-left: 10%; }
+            
+            .main-logo { width: 80%; height: auto; margin-top: 40px; margin-left: 10%; margin-bottom: 40px; }
             .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 60px 0; width: 100%; border: none; }
+            
             h2 { font-size: 12px; font-weight: 700; margin: 25px 0 var(--section-gap) 0; }
-            .blog-link { display: block; text-decoration: none !important; color: var(--main-color) !important; font-weight: 500 !important; }
-            .philosophy-en { font-size: 11.5px; color: var(--sub-text-color); margin-top: 21.6px; line-height: var(--base-line-height); font-weight: 500; letter-spacing: -0.01em; }
+            
+            .philosophy-en { font-size: 11.5px; color: var(--sub-text-color); margin-top: 21.6px; line-height: var(--base-line-height); font-weight: 500; letter-spacing: -0.01em; display: block; }
             .en-para-gap { display: block; margin-top: 10.8px; }
 
             .arch-gallery { margin-top: 80px; width: 70%; margin-left: 15%; position: relative; aspect-ratio: 3 / 4; overflow: hidden; }
             .arch-gallery img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; filter: grayscale(100%) brightness(1.1); opacity: 0; transition: opacity 1.5s ease-in-out; }
             .arch-gallery img:first-child { opacity: 1; }
             
-            @media (max-width: 380px) { :root { --container-width: 300px; --text-indent: 40px; } header { height: 100px; } .main-wrapper { padding-top: 150px; } .header-logo { height: 28px; } }
-            
-            #projectModal { display: none !important; }
+            .sub-detail { font-size: 10px; color: var(--sub-text-color); margin-top: 2px; margin-bottom: 10px; display: block; }
+            .disclaimer { font-size: 9.5px; color: #444444; opacity: 0.6; margin-top: 30px; line-height: 1.8; display: block; }
+            .year-text { font-size: 10.5px; color: var(--sub-text-color); margin-left: 6px; font-weight: 400; }
         }
-
-        .sub-detail { font-size: 10px; color: #888888; margin-top: -3px; font-weight: 500; }
-        .year-text { font-size: 10.5px; color: #888888; display: inline-block; margin-left: 2px; }
-        .nowrap { white-space: nowrap; }
-        .project-toggle { cursor: pointer; font-weight: 700; font-size: 11px; margin-top: 10px; text-decoration: underline; color: #444444; }
-        .project-item { margin-top: 15px; line-height: 1.6; border-bottom: 1px solid #f7f7f7; padding-bottom: 10px; }
-        .disclaimer { font-size: 9.5px; color: #444444; opacity: 0.5; margin-top: 30px; line-height: 1.8; font-weight: 500; }
     </style>
 </head>
 <body>
-    <header class="mobile-only">
-        <div class="header-inner">
-            <img src="title_logo.png" alt="이삭건축사사무소" class="header-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-        </div>
-    </header>
 
     <div class="main-wrapper pc-only">
-        <div class="grid-container">
-            <div class="column-left">
-                <img src="title_logo.png" alt="이삭건축사사무소" class="pc-title-logo">
-                <section>
-                    <span class="section-title">THE FIRM</span>
-                    <p>작은 요소가 모여 질서를 이루고<br>그 질서는 공간의 성격이 됩니다.</p>
-                    <p style="margin-top: 10px;">이삭건축사사무소는 일관된 기준으로<br>고요함 가운데 견고한 건축을 만듭니다.</p>
-                </section>
+        <div class="column-left">
+            <img src="title_logo.png" alt="이삭건축사사무소" class="pc-title-logo" onclick="location.reload()">
+            <ul class="nav-menu">
+                <li class="nav-item" onclick="showContent('the-firm')">THE FIRM</li>
+                <li class="nav-item" onclick="showContent('work-scope')">WORK SCOPE</li>
+                <li class="nav-item" onclick="showContent('principal')">PRINCIPAL ARCHITECT</li>
+                <li class="nav-item" onclick="showContent('contact')">CONTACT</li>
+            </ul>
+        </div>
+
+        <div class="column-right" id="pc-content-area">
+            <div id="home-gallery" class="content-section active">
+                <div class="pc-gallery">
+                    <img src="images/arch-mies-national.jpg" class="active">
+                    <img src="images/arch-corbusier-ronchamp.jpg">
+                </div>
+            </div>
+
+            <div id="the-firm" class="content-section">
+                <p>작은 요소가 모여 질서를 이루고<br>그 질서는 공간의 성격이 됩니다.</p>
+                <p style="margin-top: 15px;">이삭건축사사무소는 일관된 기준으로<br>고요함 가운데 견고한 건축을 만듭니다.</p>
                 <img src="logo.png" alt="심볼 로고" class="main-logo" onclick="window.open(this.src)">
             </div>
-            <div class="column-mid">
-                <section style="margin-top: 94px;">
-                    <span class="section-title">WORK SCOPE</span>
-                    <span class="item">신축 및 증축 설계 / 리모델링 (대수선) 설계</span>
-                    <span class="item nowrap">건축 및 해체 인허가 / 용도·표시변경 및 양성화 인허가</span>
-                    <span class="item">건축 및 해체 감리 / 건설사업관리 (CM)</span>
-                    <span class="item">대지 분석 및 사업성 검토 / 건축 법규 자문</span>
-                </section>
-                <footer style="margin-top: 40px;">
-                    <span class="section-title">CONTACT</span>
-                    <span class="item">경기도 화성시 동탄대로 683, 512호</span>
-                    <span class="item">우편번호 18468</span>
-                    <span class="item">Tel : 031 - 5183 - 1247</span>
-                    <span class="item">Fax : 0504 - 200 - 0247</span>
-                    <span class="item">E-mail : leesac@leesacarchitects.com</span>
-                    <span class="item">Web : www.leesacarchitects.com</span>
-                    <a href="https://blog.naver.com/leesacarchitects" target="_blank" style="text-decoration:none; color:inherit; font-weight:500;">Blog : blog.naver.com/leesacarchitects</a>
-                </footer>
-            </div>
-            <div class="column-right">
-                <section style="margin-top: 94px;">
-                    <span class="section-title">PRINCIPAL ARCHITECT</span>
-                    <div style="line-height:1.8;">
-                        <span class="item" style="font-size:13px;">이 삭</span>
-                        <span class="item">건축사 / CMP</span>
-                    </div>
-                    <h2 class="section-h2">Professional Experience</h2>
-                    <span class="item">해병대 공병장교 <span class="year-text">(2012 - 2014)</span></span>
-                    <span class="item">D.P.J. & Partners <span class="year-text">(2014 - 2019)</span></span>
-                    <span class="item">포스코A&C <span class="year-text">(2019 - 2021)</span></span>
-                    <span class="item">현대건설 설계팀 <span class="year-text">(2021 - 2024)</span></span>
-                    <h2 class="section-h2">Participated Projects</h2>
-                    <div class="project-toggle" onclick="openModal()"><span>[+] Open the List</span></div>
-                </section>
-            </div>
-        </div>
-    </div>
 
-    <div class="main-wrapper mobile-only">
-        <div class="content-box">
-            <section>
-                <div class="text-group">
-                    <span class="section-title">THE FIRM</span>
-                    <p>작은 요소가 모여 질서를 이루고<br>그 질서는 공간의 성격이 됩니다.</p>
-                    <p style="margin-top: 10.8px;">이삭건축사사무소는 일관된 기준으로<br>고요함 가운데 견고한 건축을 만듭니다.</p>
-                    <div class="philosophy-en">
-                        Small elements come together to form order<br>and the order becomes the character of space.
-                        <span class="en-para-gap">LEESAC ARCHITECTS creates<br>quiet yet solid architecture<br>based on consistent principles.</span>
-                    </div>
-                </div>
-                <img src="logo.png" alt="심볼 로고" class="main-logo">
-            </section>
-            <div class="divider"></div>
-            <section>
-                <div class="text-group">
-                    <span class="section-title">WORK SCOPE</span>
-                    <span class="item">신축 및 증축 설계 / 리모델링 (대수선) 설계</span>
-                    <span class="item">건축 및 해체 인허가 / 용도·표시변경 및 양성화 인허가</span>
-                    <span class="item">건축 및 해체 감리 / 건설사업관리 (CM)</span>
-                    <span class="item">대지 분석 및 사업성 검토 / 건축 법규 자문</span>
-                </div>
-            </section>
-            <div class="divider"></div>
-            <section>
-                <div class="text-group">
-                    <span class="section-title">PRINCIPAL ARCHITECT</span>
-                    <div style="margin-bottom: 30px;">
-                        <span class="item" style="font-size: 13px;">이 삭</span>
-                        <span class="item">건축사 / CMP</span>
-                    </div>
-                    <h2>Professional Experience</h2>
-                    <span class="item">해병대 공병장교 <span class="year-text">(2012 - 2014)</span></span>
-                    <span class="item">D.P.J. & Partners <span class="year-text">(2014 - 2019)</span></span>
-                    <span class="item">포스코A&C <span class="year-text">(2019 - 2021)</span></span>
-                    <span class="item">현대건설 설계팀 <span class="year-text">(2021 - 2024)</span></span>
-                    <h2>Participated Projects</h2>
+            <div id="work-scope" class="content-section">
+                <span class="item">신축 및 증축 설계 / 리모델링 (대수선) 설계</span>
+                <span class="item">건축 및 해체 인허가 / 용도·표시변경 및 양성화 인허가</span>
+                <span class="item">건축 및 해체 감리 / 건설사업관리 (CM)</span>
+                <span class="item">대지 분석 및 사업성 검토 / 건축 법규 자문</span>
+            </div>
+
+            <div id="principal" class="content-section">
+                <span class="item" style="font-size: 13px; font-weight: 700;">이 삭</span>
+                <span class="item">건축사 / CMP</span>
+                <h2 class="section-h2">Professional Experience</h2>
+                <span class="item">해병대 공병장교 <span class="year-text">(2012 - 2014)</span></span>
+                <span class="item">D.P.J. & Partners <span class="year-text">(2014 - 2019)</span></span>
+                <span class="item">포스코A&C <span class="year-text">(2019 - 2021)</span></span>
+                <span class="item">현대건설 설계팀 <span class="year-text">(2021 - 2024)</span></span>
+
+                <h2 class="section-h2">Participated Projects</h2>
+                <div class="project-toggle" id="toggle-btn" onclick="toggleProjects()">[+] Open the List</div>
+                <div id="project-list" class="project-content">
                     <span class="item">항공기 지원시설 신축 등 군부대 프로젝트 다수 참여</span>
-                    <span class="item para-top">프라다 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span>
-                    <span class="item para-top">크리스챤 디올 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
-                    <span class="item para-top">몽클레르 플래그십 빌딩 리모델링 (대수선)</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
-                    <span class="item para-top">하비에르 국제학교 증축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
-                    <span class="item para-top">샤넬 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, CM 업무 참여)</span>
-                    <span class="item para-top">반클리프 & 아펠 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span>
-                    <span class="item para-top">MRC 원료동 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
-                    <span class="item para-top">포스코 광양 교육관 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span>
-                    <span class="item para-top">포스코휴먼스 클리닝센터 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
-                    <span class="item para-top">포스코 광양제철소 본부동 리모델링 (대수선)</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
-                    <span class="item para-top">율촌 광석리튬사업 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span>
-                    <span class="item para-top">포스코 광양제철소 제품출하 육송검수장 증축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
-                    <span class="item para-top">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item" style="margin-top:10px;">프라다 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span>
+                    <span class="item">크리스챤 디올 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
+                    <span class="item">몽클레르 플래그십 빌딩 리모델링 (대수선)</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
+                    <span class="item">하비에르 국제학교 증축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
+                    <span class="item">샤넬 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, CM 업무 참여)</span>
+                    <span class="item">반클리프 & 아펠 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span>
+                    <span class="item">MRC 원료동 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">포스코 광양 교육관 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span>
+                    <span class="item">포스코휴먼스 클리닝센터 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">포스코 광양제철소 본부동 리모델링 (대수선)</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">율촌 광석리튬사업 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span>
+                    <span class="item">포스코 광양제철소 제품출하 육송검수장 증축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span>
                     <p class="disclaimer">
                         상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시<br>
                         개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며,<br>
@@ -249,47 +189,78 @@
                         본 사무소의 수행 실적과는 명확히 구분됩니다.
                     </p>
                 </div>
-            </section>
-            <div class="divider"></div>
-            <footer class="text-group">
-                <span class="section-title">CONTACT</span>
+            </div>
+
+            <div id="contact" class="content-section">
                 <span class="item">경기도 화성시 동탄대로 683, 512호</span>
                 <span class="item">우편번호 18468</span>
                 <span class="item">Tel : 031 - 5183 - 1247</span>
-                <span class="item">Fax : 0504 - 200 - 0247</span>
-                <span class="item">E-mail : leesac@leesacarchitects.com</span>
-                <span class="item">Web : www.leesacarchitects.com</span>
-                <a href="https://blog.naver.com/leesacarchitects" target="_blank" class="blog-link">Blog : blog.naver.com/leesacarchitects</a>
-            </footer>
-
-            <div class="arch-gallery" id="fade-gallery">
-                <img src="images/arch-mies-national.jpg" alt="Architecture Photo">
-                <img src="images/arch-corbusier-ronchamp.jpg" alt="Architecture Photo">
+                <span class="item">Fax : 031 - 5183 - 1246</span>
+                <span class="item">E-mail : leesac@leesac.co.kr</span>
+                <span class="item">Web : www.leesac.co.kr</span>
+                <span class="item">Blog : <a href="https://blog.naver.com/leesacarchitects" target="_blank">blog.naver.com/leesacarchitects</a></span>
             </div>
         </div>
     </div>
 
-    <div id="projectModal" class="modal" onclick="closeModal()">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <div class="modal-header">
-                <span class="close-modal" onclick="closeModal()">&times;</span>
-                <span class="section-title">Participated Projects</span>
+    <div class="main-wrapper mobile-only">
+        <div class="content-box">
+            <header><img src="title_logo.png" class="header-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"></header>
+            
+            <div class="text-group">
+                <span class="section-title">THE FIRM</span>
+                <p>작은 요소가 모여 질서를 이루고<br>그 질서는 공간의 성격이 됩니다.</p>
+                <p style="margin-top: 10.8px;">이삭건축사사무소는 일관된 기준으로<br>고요함 가운데 견고한 건축을 만듭니다.</p>
+                <div class="philosophy-en">
+                    Small elements come together to form order<br>and the order becomes the character of space.
+                    <span class="en-para-gap">LEESAC ARCHITECTS creates<br>quiet yet solid architecture<br>based on consistent principles.</span>
+                </div>
             </div>
-            <div class="modal-body">
-                <div class="project-item"><span class="item">항공기 지원시설 신축 등 군부대 프로젝트 다수 참여</span></div>
-                <div class="project-item"><span class="item">프라다 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span></div>
-                <div class="project-item"><span class="item">크리스챤 디올 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span></div>
-                <div class="project-item"><span class="item">몽클레르 플래그십 빌딩 리모델링 (대수선)</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span></div>
-                <div class="project-item"><span class="item">하비에르 국제학교 증축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span></div>
-                <div class="project-item"><span class="item">샤넬 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, CM 업무 참여)</span></div>
-                <div class="project-item"><span class="item">반클리프 & 아펠 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span></div>
-                <div class="project-item"><span class="item">MRC 원료동 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span></div>
-                <div class="project-item"><span class="item">포스코 광양 교육관 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span></div>
-                <div class="project-item"><span class="item">포스코휴먼스 클리닝센터 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span></div>
-                <div class="project-item"><span class="item">포스코 광양제철소 본부동 리모델링 (대수선)</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span></div>
-                <div class="project-item"><span class="item">율촌 광석리튬사업 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span></div>
-                <div class="project-item"><span class="item">포스코 광양제철소 제품출하 육송검수장 증축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span></div>
-                <div class="project-item"><span class="item">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span></div>
+
+            <img src="logo.png" class="main-logo">
+            
+            <div class="divider"></div>
+
+            <div class="text-group">
+                <span class="section-title">WORK SCOPE</span>
+                <span class="item">신축 및 증축 설계 / 리모델링 (대수선) 설계</span>
+                <span class="item">건축 및 해체 인허가 / 용도·표시변경 및 양성화 인허가</span>
+                <span class="item">건축 및 해체 감리 / 건설사업관리 (CM)</span>
+                <span class="item">대지 분석 및 사업성 검토 / 건축 법규 자문</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-group">
+                <span class="section-title">PRINCIPAL ARCHITECT</span>
+                <div style="margin-bottom: 30px;">
+                    <span class="item" style="font-size: 13px;">이 삭</span>
+                    <span class="item">건축사 / CMP</span>
+                </div>
+                <h2>Professional Experience</h2>
+                <span class="item">해병대 공병장교<span class="year-text">(2012 - 2014)</span></span>
+                <span class="item">D.P.J. & Partners<span class="year-text">(2014 - 2019)</span></span>
+                <span class="item">포스코A&C<span class="year-text">(2019 - 2021)</span></span>
+                <span class="item">현대건설 설계팀<span class="year-text">(2021 - 2024)</span></span>
+                
+                <h2>Participated Projects</h2>
+                <span class="item">항공기 지원시설 신축 등 군부대 프로젝트 다수 참여</span>
+                <div style="margin-top:10px;">
+                    <span class="item">프라다 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span>
+                    <span class="item">크리스챤 디올 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
+                    <span class="item">몽클레르 플래그십 빌딩 리모델링 (대수선)</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
+                    <span class="item">하비에르 국제학교 증축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 및 CM 업무 참여)</span>
+                    <span class="item">샤넬 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, CM 업무 참여)</span>
+                    <span class="item">반클리프 & 아펠 플래그십 빌딩 신축</span><span class="sub-detail">(D.P.J. & Partners 재직 당시, 실시설계 참여)</span>
+                    <span class="item">MRC 원료동 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">포스코 광양 교육관 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span>
+                    <span class="item">포스코휴먼스 클리닝센터 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">포스코 광양제철소 본부동 리모델링 (대수선)</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">율촌 광석리튬사업 신축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 참여)</span>
+                    <span class="item">포스코 광양제철소 제품출하 육송검수장 증축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
+                    <span class="item">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span>
+                </div>
+                
                 <p class="disclaimer">
                     상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시<br>
                     개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며,<br>
@@ -297,27 +268,70 @@
                     본 사무소의 수행 실적과는 명확히 구분됩니다.
                 </p>
             </div>
+
+            <div class="divider"></div>
+
+            <footer class="text-group">
+                <span class="section-title">CONTACT</span>
+                <span class="item">경기도 화성시 동탄대로 683, 512호</span>
+                <span class="item">우편번호 18468</span>
+                <span class="item">Tel : 031 - 5183 - 1247</span>
+                <span class="item">Fax : 031 - 5183 - 1246</span>
+                <span class="item">E-mail : leesac@leesac.co.kr</span>
+                <span class="item">Web : www.leesac.co.kr</span>
+                <span class="item">Blog : <a href="https://blog.naver.com/leesacarchitects" target="_blank">blog.naver.com/leesacarchitects</a></span>
+            </footer>
+
+            <div class="arch-gallery" id="mo-gallery">
+                <img src="images/arch-mies-national.jpg">
+                <img src="images/arch-corbusier-ronchamp.jpg">
+            </div>
         </div>
     </div>
 
     <script>
-        function openModal() { document.getElementById('projectModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('projectModal').style.display = 'none'; }
-        
-        const images = document.querySelectorAll('#fade-gallery img');
-        if(images.length > 0) {
-            let currentIndex = 0;
+        function showContent(id) {
+            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.getElementById('home-gallery').classList.remove('active');
+            document.getElementById('pc-content-area').scrollTop = 0;
+        }
+
+        function toggleProjects() {
+            const list = document.getElementById('project-list');
+            const btn = document.getElementById('toggle-btn');
+            if (list.style.display === 'block') {
+                list.style.display = 'none';
+                btn.innerText = '[+] Open the List';
+            } else {
+                list.style.display = 'block';
+                btn.innerText = '[-] Close the List';
+            }
+        }
+
+        const pcImages = document.querySelectorAll('.pc-gallery img');
+        if(pcImages.length > 0) {
+            let idx = 0;
             setInterval(() => {
-                images[currentIndex].style.opacity = 0;
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].style.opacity = 1;
+                pcImages[idx].classList.remove('active');
+                idx = (idx + 1) % pcImages.length;
+                pcImages[idx].classList.add('active');
+            }, 5000);
+        }
+
+        const moImages = document.querySelectorAll('#mo-gallery img');
+        if(moImages.length > 0) {
+            let midx = 0;
+            setInterval(() => {
+                moImages[midx].style.opacity = 0;
+                midx = (midx + 1) % moImages.length;
+                moImages[midx].style.opacity = 1;
             }, 4000);
         }
-        
+
         var wcs_add = wcs_add || {};
         wcs_add["wa"] = "15e659ddd6e84e0";
         if(window.wcs) { wcs_do(); }
     </script>
 </body>
-
 </html>
