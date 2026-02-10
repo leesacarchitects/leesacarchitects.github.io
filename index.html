@@ -69,7 +69,7 @@
             .section-h2 { font-size: 12px; font-weight: 500; margin: 35px 0 8px 0; color: var(--title-black); }
         }
 
-        /* [모바일 버전 스타일 - 로고 중앙 배치 및 사이즈 축소] */
+        /* [모바일 버전 스타일] */
         @media (max-width: 480px) {
             :root {
                 --base-font-size: 12px;
@@ -88,21 +88,20 @@
                 top: 0; 
                 left: 0; 
                 width: 100%; 
-                height: 100px; /* 로고 사이즈에 맞춰 헤더 높이도 소폭 조정 */
+                height: 100px; 
                 background: #ffffff; 
                 z-index: 1000;
                 display: block; 
             }
             
-            /* 로고 사이즈를 22px로 더 줄이고, 수학적으로 화면 정중앙 배치 */
             .header-logo { 
-                height: 22px; 
+                height: 29px; 
                 width: auto; 
                 cursor: pointer; 
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -50%); /* 로고의 정중앙점을 화면 50% 지점에 일치시킴 */
+                transform: translate(-50%, -50%);
                 margin: 0 !important;
                 padding: 0 !important;
             }
@@ -113,7 +112,15 @@
             .section-title { font-size: 13px; font-weight: 800; letter-spacing: 0.03em; margin-bottom: var(--section-gap); display: block; text-transform: uppercase; }
             .item, p, li, span { font-weight: 500; display: flex; align-items: baseline; margin: 0; padding: 0; }
             .para-top { margin-top: var(--section-gap); }
-            .main-logo { width: 72%; height: auto; margin-top: 40px; margin-left: 10%; margin-bottom: 40px; }
+
+            /* 본문 심볼 로고: 중앙 정렬 수정 */
+            .main-logo { 
+                display: block;
+                width: 72%; 
+                height: auto; 
+                margin: 40px auto; /* 상하 40px, 좌우 자동(중앙) */
+            }
+
             .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 60px 0; width: 100%; border: none; }
             h2 { font-size: 12px; font-weight: 700; margin: 25px 0 var(--section-gap) 0; }
             .philosophy-en { font-size: 11.5px; color: var(--sub-text-color); margin-top: 21.6px; line-height: var(--base-line-height); font-weight: 500; letter-spacing: -0.01em; display: block; }
@@ -216,6 +223,7 @@
             </div>
 
             <img src="logo.png" class="main-logo">
+            
             <div class="divider"></div>
 
             <div class="text-group">
