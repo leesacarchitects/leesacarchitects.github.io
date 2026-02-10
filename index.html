@@ -33,7 +33,7 @@
     <style>
         /* [공통] */
         html, body { margin: 0; padding: 0; background-color: #ffffff; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none !important; color: inherit !important; font-weight: 400 !important; }
+        a { text-decoration: none !important; color: inherit !important; font-weight: inherit !important; } /* 링크 굵기를 주변 텍스트와 통일 */
 
         /* [PC 버전 스타일] */
         @media (min-width: 481px) {
@@ -95,7 +95,7 @@
             }
             
             .header-logo { 
-                height: 29px; 
+                height: 32px; /* 29px에서 10% 확대 */
                 width: auto; 
                 cursor: pointer; 
                 position: absolute;
@@ -113,12 +113,12 @@
             .item, p, li, span { font-weight: 500; display: flex; align-items: baseline; margin: 0; padding: 0; }
             .para-top { margin-top: var(--section-gap); }
 
-            /* 본문 심볼 로고: 중앙 정렬 수정 */
+            /* 본문 심볼 로고: 기존 대비 80%로 축소 및 중앙 정렬 */
             .main-logo { 
                 display: block;
-                width: 72%; 
+                width: 58%; 
                 height: auto; 
-                margin: 40px auto; /* 상하 40px, 좌우 자동(중앙) */
+                margin: 40px auto;
             }
 
             .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 60px 0; width: 100%; border: none; }
@@ -190,7 +190,7 @@
                     <span class="item">포스코 광양제철소 제품출하 육송검수장 증축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
                     <span class="item">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span>
                     <p class="disclaimer">
-                        상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시 개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며, 해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다. 본 사무소의 수행 실적과는 명확히 구분됩니다.
+                        상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시 개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며,<br>해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다. 본 사무소의 수행 실적과는 명확히 구분됩니다.
                     </p>
                 </div>
             </div>
@@ -266,7 +266,7 @@
                     <span class="item">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span>
                 </div>
                 <p class="disclaimer">
-                    상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시 개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며, 해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다. 본 사무소의 수행 실적과는 명확히 구분됩니다.
+                    상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시 개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며,<br>해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다. 본 사무소의 수행 실적과는 명확히 구분됩니다.
                 </p>
             </div>
 
