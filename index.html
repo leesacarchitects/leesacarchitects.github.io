@@ -35,7 +35,7 @@
         html, body { margin: 0; padding: 0; background-color: #ffffff; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; }
         
         /* 링크 스타일 초기화 */
-        a { text-decoration: none !important; color: inherit !important; font-weight: 500 !important; }
+        a { text-decoration: none !important; color: inherit !important; font-weight: 400 !important; }
 
         /* [PC 버전 스타일] */
         @media (min-width: 481px) {
@@ -44,15 +44,16 @@
                 --base-line-height: 2.2; 
                 --main-color: #444444;
                 --sub-text-color: #888888;
+                --title-black: #000000; /* 제목용 진한 검정 추가 */
             }
             html, body { width: 100%; height: 100%; overflow: hidden; color: var(--main-color); font-size: var(--base-font-size); line-height: var(--base-line-height); }
             
             .main-wrapper.pc-only { display: flex; width: 100%; height: 100vh; padding-left: 60px; padding-top: 50px; box-sizing: border-box; }
             .column-left { width: 220px; flex-shrink: 0; }
-            .pc-title-logo { height: 34px; margin-bottom: 100px; cursor: pointer; display: block; }
+            .pc-title-logo { height: 32px; margin-bottom: 100px; cursor: pointer; display: block; }
             
             .nav-menu { list-style: none; padding: 0; margin: 0; }
-            .nav-item { font-size: 12.5px; font-weight: 500; color: #000000; margin-bottom: 25px; cursor: pointer; letter-spacing: 0.02em; transition: opacity 0.3s; }
+            .nav-item { font-size: 12.5px; font-weight: 400; color: var(--title-black); margin-bottom: 25px; cursor: pointer; letter-spacing: 0.02em; transition: opacity 0.3s; }
             .nav-item:hover { opacity: 0.5; }
 
             .column-right { flex-grow: 1; padding-left: 350px; padding-top: 134px; height: 100vh; overflow-y: auto; padding-bottom: 120px; box-sizing: border-box; }
@@ -61,21 +62,22 @@
 
             @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-            .item, p { margin: 0; font-weight: 500; display: block; line-height: var(--base-line-height); }
+            .item, p { margin: 0; font-weight: 400; display: block; line-height: var(--base-line-height); }
             
             .pc-gallery { width: 220px; height: 280px; position: relative; overflow: hidden; }
             .pc-gallery img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 2s ease-in-out; filter: grayscale(100%); }
             .pc-gallery img.active { opacity: 1; }
 
-            .main-logo { width: 183px; margin-top: 35px; margin-left: -8px; cursor: pointer; animation: pulse 6s infinite ease-in-out; }
+            .main-logo { width: 165px; margin-top: 35px; margin-left: -8px; cursor: pointer; animation: pulse 6s infinite ease-in-out; }
             @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
 
-            .project-toggle { cursor: pointer; font-weight: 700; font-size: 11px; margin-top: 15px; text-decoration: underline; }
+            /* 소제목 스타일 수정: 두께는 낮추고 색상은 진하게 */
+            .project-toggle { cursor: pointer; font-weight: 500; font-size: 11px; margin-top: 15px; text-decoration: underline; color: var(--title-black); }
             .project-content { display: none; margin-top: 15px; }
             .sub-detail { font-size: 10px; color: var(--sub-text-color); display: block; margin-top: -5px; margin-bottom: 5px; }
             .year-text { font-size: 10.5px; color: var(--sub-text-color); margin-left: 4px; font-weight: 400; }
-            .disclaimer { font-size: 9.5px; color: #444444; opacity: 0.6; margin-top: 35px; line-height: 1.8; font-weight: 500; }
-            .section-h2 { font-size: 12px; font-weight: 700; margin: 35px 0 8px 0; }
+            .disclaimer { font-size: 9.5px; color: #444444; opacity: 0.6; margin-top: 35px; line-height: 1.8; font-weight: 400; }
+            .section-h2 { font-size: 12px; font-weight: 500; margin: 35px 0 8px 0; color: var(--title-black); }
         }
 
         /* [모바일 버전 스타일] */
@@ -104,7 +106,7 @@
             .item, p, li, span { font-weight: 500; display: flex; align-items: baseline; margin: 0; padding: 0; }
             .para-top { margin-top: var(--section-gap); }
             
-            .main-logo { width: 80%; height: auto; margin-top: 40px; margin-left: 10%; margin-bottom: 40px; }
+            .main-logo { width: 72%; height: auto; margin-top: 40px; margin-left: 10%; margin-bottom: 40px; }
             .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 60px 0; width: 100%; border: none; }
             
             h2 { font-size: 12px; font-weight: 700; margin: 25px 0 var(--section-gap) 0; }
@@ -157,7 +159,7 @@
             </div>
 
             <div id="principal" class="content-section">
-                <span class="item" style="font-size: 13px; font-weight: 700;">이 삭</span>
+                <span class="item" style="font-size: 13px; font-weight: 500; color: #000000;">이 삭</span>
                 <span class="item">건축사 / CMP</span>
                 <h2 class="section-h2">Professional Experience</h2>
                 <span class="item">해병대 공병장교 <span class="year-text">(2012 - 2014)</span></span>
@@ -212,13 +214,12 @@
                 <p>작은 요소가 모여 질서를 이루고<br>그 질서는 공간의 성격이 됩니다.</p>
                 <p style="margin-top: 10.8px;">이삭건축사사무소는 일관된 기준으로<br>고요함 가운데 견고한 건축을 만듭니다.</p>
                 <div class="philosophy-en">
-                    Small elements come together to form order<br>and the order becomes the character of space.
-                    <span class="en-para-gap">LEESAC ARCHITECTS creates<br>quiet yet solid architecture<br>based on consistent principles.</span>
+                    Small elements assemble into an order<br>and the order becomes the character of space.
+                    <span class="en-para-gap">LEESAC ARCHITECTS creates<br>architecture of stillness with strength<br>based on consistent principles.</span>
                 </div>
             </div>
 
             <img src="logo.png" class="main-logo">
-            
             <div class="divider"></div>
 
             <div class="text-group">
