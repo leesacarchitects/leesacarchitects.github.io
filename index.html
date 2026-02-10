@@ -33,8 +33,6 @@
     <style>
         /* [공통] */
         html, body { margin: 0; padding: 0; background-color: #ffffff; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; }
-        
-        /* 링크 스타일 초기화 */
         a { text-decoration: none !important; color: inherit !important; font-weight: 400 !important; }
 
         /* [PC 버전 스타일] */
@@ -47,30 +45,22 @@
                 --title-black: #000000;
             }
             html, body { width: 100%; height: 100%; overflow: hidden; color: var(--main-color); font-size: var(--base-font-size); line-height: var(--base-line-height); }
-            
             .main-wrapper.pc-only { display: flex; width: 100%; height: 100vh; padding-left: 60px; padding-top: 50px; box-sizing: border-box; }
             .column-left { width: 220px; flex-shrink: 0; }
             .pc-title-logo { height: 32px; margin-bottom: 100px; cursor: pointer; display: block; }
-            
             .nav-menu { list-style: none; padding: 0; margin: 0; }
             .nav-item { font-size: 12.5px; font-weight: 400; color: var(--title-black); margin-bottom: 25px; cursor: pointer; letter-spacing: 0.02em; transition: opacity 0.3s; }
             .nav-item:hover { opacity: 0.5; }
-
             .column-right { flex-grow: 1; padding-left: 350px; padding-top: 134px; height: 100vh; overflow-y: auto; padding-bottom: 120px; box-sizing: border-box; }
             .content-section { display: none; animation: fadeIn 0.3s forwards; }
             .content-section.active { display: block; }
-
             @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
             .item, p { margin: 0; font-weight: 400; display: block; line-height: var(--base-line-height); }
-            
             .pc-gallery { width: 220px; height: 280px; position: relative; overflow: hidden; }
             .pc-gallery img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 2s ease-in-out; filter: grayscale(100%); }
             .pc-gallery img.active { opacity: 1; }
-
             .main-logo { width: 165px; margin-top: 35px; margin-left: -8px; cursor: pointer; animation: pulse 6s infinite ease-in-out; }
             @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
-
             .project-toggle { cursor: pointer; font-weight: 500; font-size: 11px; margin-top: 15px; text-decoration: underline; color: var(--title-black); }
             .project-content { display: none; margin-top: 15px; }
             .sub-detail { font-size: 10px; color: var(--sub-text-color); display: block; margin-top: -5px; margin-bottom: 5px; }
@@ -93,33 +83,44 @@
             .pc-only { display: none !important; }
             html, body { color: var(--main-color); font-size: var(--base-font-size); line-height: var(--base-line-height); overflow-x: hidden; }
             
-            /* 헤더: 중앙 정렬 보강 */
-            header { position: fixed; top: 0; left: 0; width: 100%; height: 120px; background: #ffffff; z-index: 1000; display: flex; justify-content: center; align-items: center; text-align: center; }
+            /* 모바일 헤더: 명시적 위치 고정 */
+            header { 
+                position: fixed; 
+                top: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 120px; 
+                background: #ffffff; 
+                z-index: 1000;
+                display: block; /* flex 대신 absolute 제어를 위해 변경 */
+            }
             
-            /* 로고: 명시적 중앙 배치 */
-            .header-logo { height: 35px; width: auto; max-width: 80%; cursor: pointer; display: block; margin: 0 auto; }
+            /* 모바일 로고: 수학적 정중앙 배치 (Absolute Center) */
+            .header-logo { 
+                height: 32px; /* 살짝 줄여서 세련되게 조정 */
+                width: auto; 
+                cursor: pointer; 
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* 중심점을 정확히 화면 가운데로 일치 */
+                margin: 0;
+            }
             
             .main-wrapper { display: flex; justify-content: center; padding-top: 190px; padding-bottom: 100px; width: 100%; }
             .content-box { width: var(--container-width); display: flex; flex-direction: column; }
-            
             .text-group { padding-left: var(--text-indent); box-sizing: border-box; }
             .section-title { font-size: 13px; font-weight: 800; letter-spacing: 0.03em; margin-bottom: var(--section-gap); display: block; text-transform: uppercase; }
-            
             .item, p, li, span { font-weight: 500; display: flex; align-items: baseline; margin: 0; padding: 0; }
             .para-top { margin-top: var(--section-gap); }
-            
             .main-logo { width: 72%; height: auto; margin-top: 40px; margin-left: 10%; margin-bottom: 40px; }
             .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 60px 0; width: 100%; border: none; }
-            
             h2 { font-size: 12px; font-weight: 700; margin: 25px 0 var(--section-gap) 0; }
-            
             .philosophy-en { font-size: 11.5px; color: var(--sub-text-color); margin-top: 21.6px; line-height: var(--base-line-height); font-weight: 500; letter-spacing: -0.01em; display: block; }
             .en-para-gap { display: block; margin-top: 10.8px; }
-
             .arch-gallery { margin-top: 80px; width: 70%; margin-left: 15%; position: relative; aspect-ratio: 3 / 4; overflow: hidden; }
             .arch-gallery img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; filter: grayscale(100%) brightness(1.1); opacity: 0; transition: opacity 1.5s ease-in-out; }
             .arch-gallery img:first-child { opacity: 1; }
-            
             .sub-detail { font-size: 10px; color: var(--sub-text-color); margin-top: 2px; margin-bottom: 10px; display: block; }
             .disclaimer { font-size: 9.5px; color: #444444; opacity: 0.6; margin-top: 30px; line-height: 1.8; display: block; }
             .year-text { font-size: 10.5px; color: var(--sub-text-color); margin-left: 6px; font-weight: 400; }
@@ -138,7 +139,6 @@
                 <li class="nav-item" onclick="showContent('contact')">CONTACT</li>
             </ul>
         </div>
-
         <div class="column-right" id="pc-content-area">
             <div id="home-gallery" class="content-section active">
                 <div class="pc-gallery">
@@ -146,20 +146,17 @@
                     <img src="images/arch-corbusier-ronchamp.jpg">
                 </div>
             </div>
-
             <div id="the-firm" class="content-section">
                 <p>작은 요소가 모여 질서를 이루고<br>그 질서는 공간의 성격이 됩니다.</p>
                 <p style="margin-top: 15px;">이삭건축사사무소는 일관된 기준으로<br>고요함 가운데 견고한 건축을 만듭니다.</p>
                 <img src="logo.png" alt="심볼 로고" class="main-logo" onclick="window.open(this.src)">
             </div>
-
             <div id="work-scope" class="content-section">
                 <span class="item">신축 및 증축 설계 / 리모델링 (대수선) 설계</span>
                 <span class="item">건축 및 해체 인허가 / 용도·표시변경 및 양성화 인허가</span>
                 <span class="item">건축 및 해체 감리 / 건설사업관리 (CM)</span>
                 <span class="item">대지 분석 및 사업성 검토 / 건축 법규 자문</span>
             </div>
-
             <div id="principal" class="content-section">
                 <span class="item" style="font-size: 13px; font-weight: 500; color: #000000;">이 삭</span>
                 <span class="item">건축사 / CMP</span>
@@ -168,7 +165,6 @@
                 <span class="item">D.P.J. & Partners <span class="year-text">(2014 - 2019)</span></span>
                 <span class="item">포스코A&C <span class="year-text">(2019 - 2021)</span></span>
                 <span class="item">현대건설 설계팀 <span class="year-text">(2021 - 2024)</span></span>
-
                 <h2 class="section-h2">Participated Projects</h2>
                 <div class="project-toggle" id="toggle-btn" onclick="toggleProjects()">[+] Open the List</div>
                 <div id="project-list" class="project-content">
@@ -187,14 +183,10 @@
                     <span class="item">포스코 광양제철소 제품출하 육송검수장 증축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
                     <span class="item">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span>
                     <p class="disclaimer">
-                        상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시<br>
-                        개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며,<br>
-                        해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다.<br>
-                        본 사무소의 수행 실적과는 명확히 구분됩니다.
+                        상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시 개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며, 해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다. 본 사무소의 수행 실적과는 명확히 구분됩니다.
                     </p>
                 </div>
             </div>
-
             <div id="contact" class="content-section">
                 <span class="item">경기도 화성시 동탄구 동탄대로 683, 512호</span>
                 <span class="item">우편번호 18468</span>
@@ -265,12 +257,8 @@
                     <span class="item">포스코 광양제철소 제품출하 육송검수장 증축</span><span class="sub-detail">(포스코A&C 재직 당시, 설계관리 및 인허가 참여)</span>
                     <span class="item">힐스테이트 동탄포레 신축</span><span class="sub-detail">(현대건설 설계팀 재직 당시, 설계관리 및 인허가 참여)</span>
                 </div>
-                
                 <p class="disclaimer">
-                    상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시<br>
-                    개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며,<br>
-                    해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다.<br>
-                    본 사무소의 수행 실적과는 명확히 구분됩니다.
+                    상기 프로젝트들은 대표 건축사가 이전 근무지 재직 당시 개인 자격으로 참여한 업무 경험을 바탕으로 한 경력 소개이며, 해당 프로젝트의 저작권 및 수행 주체는 각 회사에 귀속됩니다. 본 사무소의 수행 실적과는 명확히 구분됩니다.
                 </p>
             </div>
 
