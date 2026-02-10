@@ -109,11 +109,14 @@
             .main-wrapper { display: flex; justify-content: center; padding-top: 170px; padding-bottom: 100px; width: 100%; }
             .content-box { width: var(--container-width); display: flex; flex-direction: column; }
             .text-group { padding-left: var(--text-indent); box-sizing: border-box; }
+            
+            /* 수정 1, 2: 텍스트 그룹 하단에 여백 추가하여 가로줄과의 간격 확보 */
+            .text-group-with-margin { padding-left: var(--text-indent); box-sizing: border-box; margin-bottom: 60px; }
+
             .section-title { font-size: 13px; font-weight: 800; letter-spacing: 0.03em; margin-bottom: var(--section-gap); display: block; text-transform: uppercase; }
             .item, p, li, span { font-weight: 500; display: flex; align-items: baseline; margin: 0; padding: 0; }
             .para-top { margin-top: var(--section-gap); }
 
-            /* 본문 심볼 로고: 현재 대비 95%로 조정 (기존 58% -> 55%) 및 하단 여백 최적화 */
             .main-logo { 
                 display: block;
                 width: 55%; 
@@ -121,7 +124,9 @@
                 margin: 40px auto 60px auto; 
             }
 
-            .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 0 0 60px 0; width: 100%; border: none; }
+            .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 0; width: 100%; border: none; }
+            .section-spacer { height: 60px; } /* 가로줄과 다음 섹션 사이 간격 */
+
             h2 { font-size: 12px; font-weight: 700; margin: 25px 0 var(--section-gap) 0; }
             .philosophy-en { font-size: 11.5px; color: var(--sub-text-color); margin-top: 21.6px; line-height: var(--base-line-height); font-weight: 500; letter-spacing: -0.01em; display: block; }
             .en-para-gap { display: block; margin-top: 10.8px; }
@@ -228,8 +233,9 @@
             <img src="logo.png" class="main-logo">
             
             <div class="divider"></div>
+            <div class="section-spacer"></div>
 
-            <div class="text-group">
+            <div class="text-group-with-margin">
                 <span class="section-title">WORK SCOPE</span>
                 <span class="item">신축 및 증축 설계 / 리모델링 (대수선) 설계</span>
                 <span class="item">건축 및 해체 인허가 / 용도·표시변경 및 양성화 인허가</span>
@@ -238,8 +244,9 @@
             </div>
 
             <div class="divider"></div>
+            <div class="section-spacer"></div>
 
-            <div class="text-group">
+            <div class="text-group-with-margin">
                 <span class="section-title">PRINCIPAL ARCHITECT</span>
                 <div style="margin-bottom: 30px;">
                     <span class="item" style="font-size: 13px;">이 삭</span>
@@ -277,6 +284,7 @@
             </div>
 
             <div class="divider"></div>
+            <div class="section-spacer"></div>
 
             <footer class="text-group">
                 <span class="section-title">CONTACT</span>
