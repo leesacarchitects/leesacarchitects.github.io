@@ -33,7 +33,7 @@
     <style>
         /* [공통] */
         html, body { margin: 0; padding: 0; background-color: #ffffff; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none !important; color: inherit !important; font-weight: inherit !important; } /* 링크 굵기를 주변 텍스트와 통일 */
+        a { text-decoration: none !important; color: inherit !important; font-weight: inherit !important; }
 
         /* [PC 버전 스타일] */
         @media (min-width: 481px) {
@@ -95,7 +95,7 @@
             }
             
             .header-logo { 
-                height: 32px; /* 29px에서 10% 확대 */
+                height: 32px; 
                 width: auto; 
                 cursor: pointer; 
                 position: absolute;
@@ -113,15 +113,15 @@
             .item, p, li, span { font-weight: 500; display: flex; align-items: baseline; margin: 0; padding: 0; }
             .para-top { margin-top: var(--section-gap); }
 
-            /* 본문 심볼 로고: 기존 대비 80%로 축소 및 중앙 정렬 */
+            /* 본문 심볼 로고: 현재 대비 95%로 조정 (기존 58% -> 55%) 및 하단 여백 최적화 */
             .main-logo { 
                 display: block;
-                width: 58%; 
+                width: 55%; 
                 height: auto; 
-                margin: 40px auto;
+                margin: 40px auto 60px auto; 
             }
 
-            .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 60px 0; width: 100%; border: none; }
+            .divider { height: 1px; background: var(--main-color); opacity: 0.1; margin: 0 0 60px 0; width: 100%; border: none; }
             h2 { font-size: 12px; font-weight: 700; margin: 25px 0 var(--section-gap) 0; }
             .philosophy-en { font-size: 11.5px; color: var(--sub-text-color); margin-top: 21.6px; line-height: var(--base-line-height); font-weight: 500; letter-spacing: -0.01em; display: block; }
             .en-para-gap { display: block; margin-top: 10.8px; }
