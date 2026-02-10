@@ -44,7 +44,7 @@
                 --base-line-height: 2.2; 
                 --main-color: #444444;
                 --sub-text-color: #888888;
-                --title-black: #000000; /* 제목용 진한 검정 추가 */
+                --title-black: #000000;
             }
             html, body { width: 100%; height: 100%; overflow: hidden; color: var(--main-color); font-size: var(--base-font-size); line-height: var(--base-line-height); }
             
@@ -71,7 +71,6 @@
             .main-logo { width: 165px; margin-top: 35px; margin-left: -8px; cursor: pointer; animation: pulse 6s infinite ease-in-out; }
             @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
 
-            /* 소제목 스타일 수정: 두께는 낮추고 색상은 진하게 */
             .project-toggle { cursor: pointer; font-weight: 500; font-size: 11px; margin-top: 15px; text-decoration: underline; color: var(--title-black); }
             .project-content { display: none; margin-top: 15px; }
             .sub-detail { font-size: 10px; color: var(--sub-text-color); display: block; margin-top: -5px; margin-bottom: 5px; }
@@ -94,8 +93,11 @@
             .pc-only { display: none !important; }
             html, body { color: var(--main-color); font-size: var(--base-font-size); line-height: var(--base-line-height); overflow-x: hidden; }
             
-            header { position: fixed; top: 0; left: 0; width: 100%; height: 120px; background: #ffffff; z-index: 1000; display: flex; justify-content: center; align-items: center; }
-            .header-logo { height: 35px; width: auto; cursor: pointer; }
+            /* 헤더: 중앙 정렬 보강 */
+            header { position: fixed; top: 0; left: 0; width: 100%; height: 120px; background: #ffffff; z-index: 1000; display: flex; justify-content: center; align-items: center; text-align: center; }
+            
+            /* 로고: 명시적 중앙 배치 */
+            .header-logo { height: 35px; width: auto; max-width: 80%; cursor: pointer; display: block; margin: 0 auto; }
             
             .main-wrapper { display: flex; justify-content: center; padding-top: 190px; padding-bottom: 100px; width: 100%; }
             .content-box { width: var(--container-width); display: flex; flex-direction: column; }
@@ -207,7 +209,9 @@
 
     <div class="main-wrapper mobile-only">
         <div class="content-box">
-            <header><img src="title_logo.png" class="header-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"></header>
+            <header>
+                <img src="title_logo.png" class="header-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            </header>
             
             <div class="text-group">
                 <span class="section-title">THE FIRM</span>
